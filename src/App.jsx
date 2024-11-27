@@ -10,6 +10,7 @@ import RegistrationForm from './components/Regiteration'
 import Layout from './pages/Layout.jsx/Layout'
 import Products from './components/Products'
 import Cart from './pages/cart'
+import OrderDetails from './pages/Orderform'
 
 function App() {
   
@@ -25,6 +26,8 @@ function App() {
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/login" element={<LoginForm/>}/>
           <Route path="/register" element={<RegistrationForm/>}/>
+          <Route path="/order" element={<OrderDetails/>}/>
+          
         </Route>
       </Routes>
     </Router>

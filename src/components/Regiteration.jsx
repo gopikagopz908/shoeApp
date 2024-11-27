@@ -47,7 +47,8 @@ const RegistrationForm = () => {
             email: '',
             password: '',
             confirmPassword: '',
-            cart:[]
+            cart:[],
+            order:[]
           }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}

@@ -38,7 +38,7 @@ const Loginform = () => {
       localStorage.setItem('id', user.id);
       navigate('/');
     } else {
-      alert('Invalid credentials. Please try again.');
+      alert('Invalid user. Please try again.');
       navigate('/register');
     }
   };

@@ -5,12 +5,12 @@ import { userContext } from '../../context/useContext';
 import "./Navbar.css"
 
 function Navbar() {
-  const {state}=useContext(userContext)
+  const {state,cart}=useContext(userContext)
   return (
     <nav className="navbar navbar-expand-md ">
       <div className="container-fluid">
         <a 
-          className="nav-head fs-2 fw-bold" 
+          className="nav-head fs-1 fw-bold" 
           href="#" 
           
         >
@@ -27,7 +27,7 @@ function Navbar() {
           <div className="offcanvas-body">
             <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
               <li className="nav-item">
-                <a className="nav-link active fs-5 text-dark" href="#">Home</a>
+                <a className="nav-link active fs-5 text-dark" href="/">Home</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link active fs-5 text-dark" href="#">Orders</a>
@@ -50,8 +50,8 @@ function Navbar() {
                 
               </li>
             </ul>
-            <div>
-            <IoCartOutline style={{ fontSize: '30px', marginRight: '180px' }} />
+            <div><span className=' top-0 start-100 translate-middle badge bg-primary rounded-circle'>{cart.length}</span>
+           <Link to="/cart"><IoCartOutline style={{ fontSize: '30px', marginRight: '180px' }} /></Link>
 
             
               <button onClick={()=>localStorage.clear('id')} className="btn btn-outline-dark rounded-pill">
