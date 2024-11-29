@@ -22,9 +22,9 @@ const navigate=useNavigate()
  <strong className="me-3">Total: ${totalAmount.toFixed(2)}</strong>
           <button
             className="btn btn-success"
-            onClick={()=>navigate('/order')}
-            disabled={cart.length === 0} 
-          >
+            onClick={()=>navigate('/order')}//form
+            disabled={cart.length === 0} >
+          
             Buy Now
           </button>
         </div>

@@ -6,7 +6,7 @@ import { createContext } from 'react'
 function Context({children}) {
     const id =localStorage.getItem("id")
     const[cart,setCart]=useState([])
-     const [isLogged,setislogged]=useState(false)
+    const [isLogged,setislogged]=useState(false)
     const [products, setProducts] = useState([]);
     const[orders,setOrders]=useState([])
 

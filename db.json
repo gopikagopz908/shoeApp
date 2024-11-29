@@ -90,7 +90,22 @@
       "email": "jith@gmail.com",
       "password": "999999",
       "confirmPassword": "999999",
-      "cart": [],
+      "cart": [
+        {
+          "id": "3",
+          "title": "Puma Future Rider Play On",
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
+          "price": 3500,
+          "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
+          "brand": "Puma",
+          "model": "Future Rider Play On",
+          "color": "white",
+          "category": "casual",
+          "discount": 15,
+          "stock": 10,
+          "quantity": 1
+        }
+      ],
       "order": [
         {
           "fullName": "gopika",
@@ -132,7 +147,7 @@
           "totalAmount": 11800
         }
       ]
-    }
+    },{"username":"admin","email":"admin@gmail.com","password":"123456"}
   ],
   "products": [
     {

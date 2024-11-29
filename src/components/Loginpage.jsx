@@ -8,9 +8,9 @@ import { userContext } from '../context/useContext';
 
 
 const validationSchema = Yup.object({
-  username: Yup.string()
-    .min(3, 'Username must be at least 3 characters')
-    .required('Username is required'),
+  email: Yup.string()
+    .email("valid email is required")
+    .required('email is required'),
   password: Yup.string()
     .min(6, 'Password must be at least 6 characters')
     .required('Password is required'),
@@ -32,8 +32,14 @@ const Loginform = () => {
 
   
   const handleSubmit = async (values) => {
-    const user = userdata.find((user) => user.username === values.username && user.password === values.password);
-
+  
+    const user = userdata.find((user) => user.email === values.email && user.password === values.password);
+    
+if(user.username==="admin"&&user.password==="123456"){
+  navigate('/admin')
+  alert("admin logined")
+  return
+}
     if (user) {
       alert('Login Successful!');
       
@@ -52,7 +58,7 @@ const Loginform = () => {
         <h3 className="text-center mb-4">Login</h3>
         <Formik
           initialValues={{
-            username: '',
+            email: '',
             password: '',
           }}
           validationSchema={validationSchema}
@@ -62,12 +68,12 @@ const Loginform = () => {
             <Form>
               <div className="mb-3">
                 <label htmlFor="username" className="form-label">
-                  Username
+                  Email
                 </label>
                 <Field
                   type="text"
-                  id="username"
-                  name="username"
+                  id="email"
+                  name="email"
                   className="form-control"
                   placeholder="Enter your username"
                 />
