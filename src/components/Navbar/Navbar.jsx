@@ -5,7 +5,8 @@ import { userContext } from '../../context/useContext';
 import "./Navbar.css"
 
 function Navbar() {
-  const {state,cart}=useContext(userContext)
+  const {cart,isLogged}=useContext(userContext)
+  
   return (
     <nav className="navbar navbar-expand-md ">
       <div className="container-fluid">
@@ -30,7 +31,7 @@ function Navbar() {
                 <a className="nav-link active fs-5 text-dark" href="/">Home</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active fs-5 text-dark" href="#">Orders</a>
+                <a className="nav-link active fs-5 text-dark" href="/orders">orders</a>
               </li>
               
               
@@ -55,7 +56,7 @@ function Navbar() {
 
             
               <button onClick={()=>localStorage.clear('id')} className="btn btn-outline-dark rounded-pill">
-                <Link className="text-dark text-decoration-none" to="/login">Login</Link>
+                <Link className="text-dark text-decoration-none" to="/login">{isLogged?'logout':'login'}</Link>
               </button>
             </div>
           </div>

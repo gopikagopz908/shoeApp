@@ -1,149 +1,137 @@
 {
   "users": [
     {
-      "id": "4ae6",
-      "username": "gopika",
-      "email": "gopikac680@gmail.com",
-      "password": "223456",
-      "confirmPassword": "223456",
-      "cart": []
-    },
-    {
-      "id": "f85b",
-      "username": "gopika",
-      "email": "gopikac680@gmail.com",
-      "password": "123456",
-      "confirmPassword": "123456",
+      "id": "5b02",
+      "username": "arshida",
+      "email": "yasar@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
       "cart": [],
       "order": [
         {
-          "fullName": "gopika c",
+          "fullName": "ar",
           "phoneNumber": "5678998545",
-          "address": "sedfrgthj",
-          "state": "rfgtyhj",
-          "pincode": "789655",
+          "address": "hj",
+          "state": "jhh",
+          "pincode": "898765",
+          "paymentMethod": "gpay",
+          "cartitems": [
+            {
+              "id": "2",
+              "title": "Nike Air Zoom Pegasus 40",
+              "image": "https://images.nike.com/is/image/DotCom/CW7356_006_A_PREM?fmt=png-alpha&bgc=fafafa&wid=500&hei=500",
+              "price": 6200,
+              "description": "Nike's Air Zoom Pegasus 40 features an engineered mesh upper for enhanced breathability, paired with Nike’s signature Air Zoom cushioning for comfort and durability. Available in colorways like Black/White/Anthracite and Pure Platinum/University Red/White.",
+              "brand": "Nike",
+              "model": "Air Zoom Pegasus 40",
+              "color": "black",
+              "category": "running",
+              "discount": 10,
+              "stock": 10,
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 6200
+        }
+      ]
+    },
+    {
+      "id": "62c9",
+      "username": "nidha",
+      "email": "nidha@gmail.com",
+      "password": "111111",
+      "confirmPassword": "111111",
+      "cart": [],
+      "order": [
+        {
+          "fullName": "nidha",
+          "phoneNumber": "2345689212",
+          "address": "dfghjk",
+          "state": "fghjk",
+          "pincode": "675645",
           "paymentMethod": "paytm",
           "cartitems": [
             {
-              "id": "3",
-              "title": "Puma Future Rider Play On",
-              "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
-              "price": 3500,
-              "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
-              "brand": "Puma",
-              "model": "Future Rider Play On",
-              "color": "white",
-              "category": "casual",
+              "id": "11",
+              "title": "Mizuno Wave Rider 25",
+              "image": "https://emea.mizuno.com/dw/image/v2/BDBS_PRD/on/demandware.static/-/Sites-masterCatalog_Mizuno/default/dwd7f7391b/AW21/footwear/SH_J1GC210325_00.png?sw=900&sh=900",
+              "price": 7000,
+              "description": "The Mizuno Wave Rider 25 offers a smooth running experience with a mesh upper and Wave technology for shock absorption. Available in colorways like White/Blue and Charcoal/Black.",
+              "brand": "Mizuno",
+              "model": "Wave Rider 25",
+              "color": "blue",
+              "category": "running",
               "discount": 15,
               "stock": 10,
               "quantity": 1
             },
             {
-              "id": "4",
-              "title": "Under Armour HOVR Phantom 3",
-              "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/shoe/g/u/m/-original-imah4ekkw3zcfdn5.jpeg?q=90&crop=false",
-              "price": 7800,
-              "description": "The HOVR Phantom 3 from Under Armour is designed for runners, featuring HOVR cushioning for a zero-gravity feel. It has a knitted upper for breathability and comes in colorways like Black/White and Navy Blue.",
-              "brand": "Under Armour",
-              "model": "HOVR Phantom 3",
-              "color": "navy",
+              "id": "12",
+              "title": "Hoka Clifton 8",
+              "image": "https://www.theathletesfoot.co.nz/media/catalog/product/cache/30b15c9880beb2a1230f6de71d9a1f9d/1/1/1119393_rtar_01.jpg",
+              "price": 7500,
+              "description": "The Hoka Clifton 8 is a lightweight and cushioned running shoe, featuring an engineered mesh upper and EVA midsole. Available in colorways like Ocean/Blue and Black/White.",
+              "brand": "Hoka",
+              "model": "Clifton 8",
+              "color": "ocean blue",
               "category": "running",
               "discount": 12,
               "stock": 10,
               "quantity": 1
             }
-          ]
+          ],
+          "totalAmount": 14500
         }
       ]
     },
     {
-      "id": "73ae",
-      "username": "arshida",
-      "email": "arshi@gmail.com",
-      "password": "987654",
-      "confirmPassword": "987654",
-      "cart": []
-    },
-    {
-      "id": "0d18",
-      "username": "yasar",
-      "email": "yasar@gmail.com",
-      "password": "555555",
-      "confirmPassword": "555555",
-      "cart": []
-    },
-    {
-      "id": "2a16",
-      "username": "yasar",
-      "email": "yasar@gmail.com",
-      "password": "555555",
-      "confirmPassword": "555555",
-      "cart": []
-    },
-    {
-      "id": "701c",
-      "username": "salih",
-      "email": "salih@gmail.com",
-      "password": "12345678",
-      "confirmPassword": "12345678",
-      "cart": [
-        {
-          "id": "3",
-          "title": "Puma Future Rider Play On",
-          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
-          "price": 3500,
-          "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
-          "brand": "Puma",
-          "model": "Future Rider Play On",
-          "color": "white",
-          "category": "casual",
-          "discount": 15,
-          "stock": 10,
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "id": "0ade",
-      "username": "saabith",
-      "email": "sabith@gmail.com",
-      "password": "1222222",
-      "confirmPassword": "1222222",
-      "cart": [],
-      "order": []
-    },
-    {
-      "id": "f8c7",
-      "username": "adityan",
-      "email": "adi@gmail.com",
+      "id": "365b",
+      "username": "jith",
+      "email": "jith@gmail.com",
       "password": "999999",
       "confirmPassword": "999999",
       "cart": [],
-      "order": []
-    },
-    {
-      "id": "e684",
-      "username": "surya",
-      "email": "surya@gmail.com",
-      "password": "111111",
-      "confirmPassword": "111111",
-      "cart": [
+      "order": [
         {
-          "id": "3",
-          "title": "Puma Future Rider Play On",
-          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
-          "price": 3500,
-          "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
-          "brand": "Puma",
-          "model": "Future Rider Play On",
-          "color": "white",
-          "category": "casual",
-          "discount": 15,
-          "stock": 10,
-          "quantity": 1
+          "fullName": "gopika",
+          "phoneNumber": "3456765432",
+          "address": "skp",
+          "state": "kla",
+          "pincode": "879540",
+          "paymentMethod": "gpay",
+          "cartitems": [
+            {
+              "id": "7",
+              "title": "Asics Gel-Kayano 28",
+              "image": "https://www.sportswing.in/wp-content/uploads/2021/11/Asics-Gel-Kayano-28-Running-Shoes-Glow-Yellow-White-p2.jpg",
+              "price": 6800,
+              "description": "Asics Gel-Kayano 28 offers stability and support, with a breathable mesh upper and Gel cushioning technology, ideal for long-distance running. Available in colorways like Black/White and Electric Red.",
+              "brand": "Asics",
+              "model": "Gel-Kayano 28",
+              "color": "red",
+              "category": "running",
+              "discount": 13,
+              "stock": 10,
+              "quantity": 1
+            },
+            {
+              "id": "6",
+              "title": "New Balance 574",
+              "image": "https://images-cdn.ubuy.co.in/633ac13e990f6357545f40aa-new-balance-574-grey-silver-mens-running.jpg",
+              "price": 5000,
+              "description": "New Balance's 574 is a retro-inspired model featuring a mix of suede and mesh upper, paired with an ENCAP midsole for stability. Available in colorways like Gray/White and Black/Yellow.",
+              "brand": "New Balance",
+              "model": "574",
+              "color": "gray",
+              "category": "casual",
+              "discount": 20,
+              "stock": 10,
+              "quantity": 1
+            }
+          ],
+          "totalAmount": 11800
         }
-      ],
-      "order": []
+      ]
     }
   ],
   "products": [

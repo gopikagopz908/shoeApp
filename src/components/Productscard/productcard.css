@@ -1,17 +1,15 @@
-/* ProductCard.css */
 
-/* Card Styling */
 .mycard {
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   height: 280px !important;
 }
 
 .card:hover {
-  transform: scale(1.05)!important; /* Slightly enlarges on hover */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+  transform: scale(1.05)!important; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Card Image */
+
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
@@ -19,14 +17,14 @@
   object-fit: cover;
 }
 
-/* Card Body */
+
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Card Title */
+
 .card-title {
   font-size: 1rem;
   font-weight: bold;
@@ -36,25 +34,25 @@
   white-space: nowrap;
 }
 
-/* Price Text */
+
 .text-primary {
-  color: #032344 !important; /* Bootstrap primary color */
+  color: #032344 !important; 
   font-weight: bold;
 }
 
-/* Add to Cart Button */
+
 .btn-primary {
   background-color: #3d6492;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #164a92 !important; /* Darker shade on hover */
+  background-color: #164a92 !important; 
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 576px) {
   .card-img-top {
-    height: 150px; /* Smaller image height for mobile */
+    height: 150px; 
   }
 }

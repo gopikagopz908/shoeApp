@@ -6,10 +6,16 @@ import { createContext } from 'react'
 function Context({children}) {
     const id =localStorage.getItem("id")
     const[cart,setCart]=useState([])
-
+     const [isLogged,setislogged]=useState(false)
     const [products, setProducts] = useState([]);
     const[orders,setOrders]=useState([])
 
+useEffect(()=>{
+
+if(id){
+  setislogged(true)
+}
+},[])
 
   useEffect(() => { 
     axios
@@ -41,8 +47,6 @@ function Context({children}) {
     .catch((error)=>{
         console.log(error)
     })
-
-
   },[])
   const AddtoCart=async(product)=>{
     const existcart=cart.find(item=>item.id===product.id)
@@ -77,11 +81,11 @@ try {
      setCart(newcart)
 
  }
- 
-  
+ const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
   return (
     <div>
-        <userContext.Provider value={{cart,setCart,AddtoCart,RemoveCart,updatequantity,orders}}>
+        <userContext.Provider value={{cart,setCart,AddtoCart,RemoveCart,updatequantity,orders,totalAmount,isLogged,setislogged,setOrders}}>
             {children}
 
         </userContext.Provider>

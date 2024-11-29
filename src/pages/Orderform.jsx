@@ -5,8 +5,9 @@ import Select from "react-select";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { userContext } from "../context/useContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-// Validation schema using Yup
+
 const validationSchema = Yup.object({
   fullName: Yup.string().required("Full Name is required"),
   phoneNumber: Yup.string()
@@ -70,183 +71,204 @@ const paymentOptions = [
 
 const OrderDetails = () => {
   const id=localStorage.getItem('id')
-  const{cart,orders}=useContext(userContext)
+  const navigate=useNavigate()
+  const{cart,orders=[],totalAmount,setOrders}=useContext(userContext)
   return (
     <div className="container mt-5 justify-content-center">
-      <div
-        style={{
-          padding: "25px",
-          border: "1px solid #ddd",
-          borderRadius: "10px",
-          boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
-          backgroundColor: "#fff",
+    <div
+      style={{
+        padding: "15px", 
+        border: "1px solid #ddd",
+        borderRadius: "10px",
+        boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
+        backgroundColor: "#fff",
+        maxWidth: "500px", 
+        margin: "0 auto", 
+      }}
+    >
+      <h2 className="text-center mb-4" style={{ color: "#333", fontSize: "1.5rem" }}>
+        Order Details
+      </h2>
+      <Formik
+        initialValues={{
+          fullName: "",
+          phoneNumber: "",
+          address: "",
+          state: "",
+          pincode: "",
+          paymentMethod: "",
         }}
-      >
-        <h2 className="text-center mb-4" style={{ color: "#333" }}>
-          Order Details
-        </h2>
-        <Formik
-          initialValues={{
-            fullName: "",
-            phoneNumber: "",
-            address: "",
-            state: "",
-            pincode: "",
-            paymentMethod: "",
-          }}
-          validationSchema={validationSchema}
-          onSubmit={(values) => {
-            const neworder={
+        validationSchema={validationSchema}
+        onSubmit={(values) => {
+          const newOrder = {
             fullName: values.fullName,
             phoneNumber: values.phoneNumber,
             address: values.address,
             state: values.state,
             pincode: values.pincode,
             paymentMethod: values.paymentMethod,
-            cartitems:cart
-            }
-             axios.patch(`http://localhost:3000/users/${id}`,{order:[...orders,neworder],cart:[]})
-             .then(res=>console.log(`success`))
-            alert('succes')
-          }}
-        >
-          {({ setFieldValue, values }) => (
-            <Form>
-              {/* Full Name */}
-              <div className="mb-4">
-                <label htmlFor="fullName" className="form-label">
-                  Full Name
-                </label>
-                <Field
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  className="form-control form-control-lg"
-                />
-                <ErrorMessage
-                  name="fullName"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* Phone Number */}
-              <div className="mb-4">
-                <label htmlFor="phoneNumber" className="form-label">
-                  Phone Number
-                </label>
-                <Field
-                  type="text"
-                  id="phoneNumber"
-                  name="phoneNumber"
-                  className="form-control form-control-lg"
-                />
-                <ErrorMessage
-                  name="phoneNumber"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* Address */}
-              <div className="mb-4">
-                <label htmlFor="address" className="form-label">
-                  Address
-                </label>
-                <Field
-                  as="textarea"
-                  id="address"
-                  name="address"
-                  className="form-control form-control-lg"
-                  rows="3"
-                />
-                <ErrorMessage
-                  name="address"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* State */}
-              <div className="mb-4">
-                <label htmlFor="state" className="form-label">
-                  State
-                </label>
-                <Field
-                  type="text"
-                  id="state"
-                  name="state"
-                  className="form-control form-control-lg"
-                />
-                <ErrorMessage
-                  name="state"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* Pincode */}
-              <div className="mb-4">
-                <label htmlFor="pincode" className="form-label">
-                  Pincode
-                </label>
-                <Field
-                  type="text"
-                  id="pincode"
-                  name="pincode"
-                  className="form-control form-control-lg"
-                />
-                <ErrorMessage
-                  name="pincode"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* Payment Method */}
-              <div className="mb-4">
-                <label htmlFor="paymentMethod" className="form-label">
-                  Payment Method
-                </label>
-                <Field name="paymentMethod">
-                  {({ field, form }) => (
-                    <Select
-                      options={paymentOptions}
-                      onChange={(option) =>
-                        form.setFieldValue("paymentMethod", option.value)
-                      }
-                      value={paymentOptions.find(
-                        (option) => option.value === form.values.paymentMethod
-                      )}
-                      className="basic-select"
-                      classNamePrefix="select"
-                    />
-                  )}
-                </Field>
-                <ErrorMessage
-                  name="paymentMethod"
-                  component="div"
-                  className="text-danger mt-1"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="d-flex justify-content-center mt-5">
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-lg"
-                  style={{
-                    width: "100%",
-                  }}
-                >
-                  Place Order
-                </button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      </div>
+            cartitems: cart,
+            totalAmount,
+          };
+  
+          axios
+            .patch(`http://localhost:3000/users/${id}`, {
+              order: [...orders, newOrder],
+              cart: [],
+            })
+            .then((res) => console.log("success"))
+            .catch((err) => console.log(err));
+          alert("Order placed successfully");
+         
+          navigate("/");
+        }}
+      >
+        {({ setFieldValue, values }) => (
+          <Form>
+            
+            <div className="mb-3">
+              <label htmlFor="fullName" className="form-label">
+                Full Name
+              </label>
+              <Field
+                type="text"
+                id="fullName"
+                name="fullName"
+                className="form-control form-control-sm" 
+              />
+              <ErrorMessage
+                name="fullName"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="mb-3">
+              <label htmlFor="phoneNumber" className="form-label">
+                Phone Number
+              </label>
+              <Field
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                className="form-control form-control-sm" 
+              />
+              <ErrorMessage
+                name="phoneNumber"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="mb-3">
+              <label htmlFor="address" className="form-label">
+                Address
+              </label>
+              <Field
+                as="textarea"
+                id="address"
+                name="address"
+                className="form-control form-control-sm"
+                rows="3"
+              />
+              <ErrorMessage
+                name="address"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="mb-3">
+              <label htmlFor="state" className="form-label">
+                State
+              </label>
+              <Field
+                type="text"
+                id="state"
+                name="state"
+                className="form-control form-control-sm"
+              />
+              <ErrorMessage
+                name="state"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="mb-3">
+              <label htmlFor="pincode" className="form-label">
+                Pincode
+              </label>
+              <Field
+                type="text"
+                id="pincode"
+                name="pincode"
+                className="form-control form-control-sm"
+              />
+              <ErrorMessage
+                name="pincode"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="mb-3">
+              <label htmlFor="paymentMethod" className="form-label">
+                Payment Method
+              </label>
+              <Field name="paymentMethod">
+                {({ field, form }) => (
+                  <Select
+                    options={paymentOptions}
+                    onChange={(option) =>
+                      form.setFieldValue("paymentMethod", option.value)
+                    }
+                    value={paymentOptions.find(
+                      (option) => option.value === form.values.paymentMethod
+                    )}
+                    className="basic-select"
+                    classNamePrefix="select"
+                    styles={{
+                      control: (provided) => ({
+                        ...provided,
+                        padding: "0",
+                        fontSize: "14px", 
+                      }),
+                    }}
+                  />
+                )}
+              </Field>
+              <ErrorMessage
+                name="paymentMethod"
+                component="div"
+                className="text-danger mt-1"
+              />
+            </div>
+  
+            
+            <div className="d-flex justify-content-center mt-4">
+              <button
+                type="submit"
+                className="btn btn-primary btn-sm" 
+                style={{
+                  width: "100%", 
+                  padding: "10px", 
+                }}
+              >
+                Place Order
+              </button>
+            </div>
+          </Form>
+        )}
+      </Formik>
     </div>
+  </div>
+  
   );
 };
 

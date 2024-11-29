@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { Link, useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
-import './Loginpage.css'; // Import custom CSS file for additional styling
+import './Loginpage.css'; 
+import { userContext } from '../context/useContext';
 
-// Validation schema using Yup
+
 const validationSchema = Yup.object({
   username: Yup.string()
     .min(3, 'Username must be at least 3 characters')
@@ -17,9 +18,10 @@ const validationSchema = Yup.object({
 
 const Loginform = () => {
   const navigate = useNavigate();
+  const{setislogged}=useContext(userContext)
   const [userdata, setUserdata] = useState([]);
 
-  // Fetch users from API
+  
   useEffect(() => {
     const fetchUsers = async () => {
       const res = await axios.get("http://localhost:3000/users");
@@ -28,14 +30,15 @@ const Loginform = () => {
     fetchUsers();
   }, []);
 
-  // Handle form submission
+  
   const handleSubmit = async (values) => {
     const user = userdata.find((user) => user.username === values.username && user.password === values.password);
 
     if (user) {
       alert('Login Successful!');
-      // Store user ID in localStorage
+      
       localStorage.setItem('id', user.id);
+      setislogged(true)
       navigate('/');
     } else {
       alert('Invalid user. Please try again.');
@@ -89,6 +92,7 @@ const Loginform = () => {
                 <button type="submit" className="btn btn-primary">
                   Login
                 </button>
+                <Link to="/register"> don't have an account?</Link>
               </div>
             </Form>
           )}

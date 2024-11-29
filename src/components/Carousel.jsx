@@ -10,7 +10,7 @@ const ShoeCarousel = () => {
         style={{ width: "100%"}}
       >
         <div className="carousel-inner">
-          {/* Slide 1 */}
+          
           <div className="carousel-item active">
             <img
               style={{
@@ -29,7 +29,7 @@ const ShoeCarousel = () => {
             </div>
           </div>
 
-          {/* Slide 2 */}
+          
           <div className="carousel-item">
             <img
               style={{
@@ -44,7 +44,7 @@ const ShoeCarousel = () => {
            
           </div>
 
-          {/* Slide 3 */}
+          
           <div className="carousel-item">
             <img
               style={{
@@ -60,7 +60,7 @@ const ShoeCarousel = () => {
           </div>
         </div>
 
-        {/* Carousel Controls */}
+        
         <button
           className="carousel-control-prev"
           type="button"

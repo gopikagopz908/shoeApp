@@ -5,32 +5,29 @@ import { useNavigate } from 'react-router-dom';
 function Cart() {
   const { cart, RemoveCart, updatequantity } = useContext(userContext);
 
-  // Calculate total amount
+  
   const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 const navigate=useNavigate()
-  // const handleBuyNow = () => {
-
-  //   alert(`Thank you for your purchase! Your total is $${totalAmount.toFixed(2)}`);
-  // };
+  
 
   return (
     <div className="container mt-4">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 style={{marginLeft:"430px"}}>Shopping Cart</h2>
+      <div className="d-flex justify-content-center align-items-center mb-4">
+        <h2 >Shopping Cart</h2>
         
       </div>
-      <div style={{backgroundColor:"grey" ,width:"280px",marginLeft:"770px",height:"115px "}} className="d-flex  justify-content-end align-items-center">
-        
-          <strong className="me-3">Total: ${totalAmount.toFixed(2)}</strong>
+      
+        <div className='d-flex justify-content-end'>
+
+ <strong className="me-3">Total: ${totalAmount.toFixed(2)}</strong>
           <button
             className="btn btn-success"
             onClick={()=>navigate('/order')}
-            disabled={cart.length === 0} // Disable the button if the cart is empty
+            disabled={cart.length === 0} 
           >
             Buy Now
           </button>
         </div>
-
       {cart.length > 0 ? (
         <div className="row g-3">
           {cart.map((item) => (
@@ -57,7 +54,7 @@ const navigate=useNavigate()
                       -
                     </button>
                     <button
-                      className="btn btn-danger btn-sm ms-3"
+                      className="btn btn-primary btn-sm ms-3"
                       onClick={() => RemoveCart(item.id)}
                     >
                       Remove

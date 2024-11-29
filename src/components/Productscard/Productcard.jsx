@@ -63,15 +63,15 @@ const ProductCard = ({ product }) => {
         </div>
       </div>
 
-      {/* Modal */}
+      
       {showModal && (
         <div className="modal show d-block" tabIndex="-1" role="dialog">
           <div
             className="modal-dialog modal-dialog-centered"
             style={{
-              maxWidth: "800px", // Increased modal width
-              maxHeight: "80vh", // Limit the height of the modal
-              overflowY: "auto", // Make content scrollable if too tall
+              maxWidth: "800px",  
+              maxHeight: "80vh", 
+              overflowY: "auto", 
             }}
             role="document"
           >
@@ -86,7 +86,7 @@ const ProductCard = ({ product }) => {
                 ></button>
               </div>
               <div className="modal-body d-flex" style={{ gap: "20px" }}>
-                {/* Left: Product Image */}
+                
                 <div
                   style={{
                     flex: "2",
@@ -99,13 +99,13 @@ const ProductCard = ({ product }) => {
                     alt={product.title}
                     style={{
                       width: "100%",
-                      height: "350px", // Adjust the image height here
+                      height: "350px", 
                       objectFit: "cover",
                     }}
                   />
                 </div>
 
-                {/* Right: Product Details */}
+                
                 <div
                   style={{
                     flex: "3",
@@ -120,7 +120,7 @@ const ProductCard = ({ product }) => {
                     <p className="fw-bold text-primary">Price: ${product.price}</p>
                   </div>
 
-                  {/* Buttons at Bottom Left */}
+                  
                   <div className="d-flex justify-content-start mt-3">
                     <button
                       className="btn btn-primary me-2"

@@ -11,6 +11,7 @@ import Layout from './pages/Layout.jsx/Layout'
 import Products from './components/Products'
 import Cart from './pages/cart'
 import OrderDetails from './pages/Orderform'
+import Order from './pages/modal/order'
 
 function App() {
   
@@ -24,11 +25,11 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path=":category" element={<Products/>}/>
           <Route path="/cart" element={<Cart/>}/>
-          <Route path="/login" element={<LoginForm/>}/>
-          <Route path="/register" element={<RegistrationForm/>}/>
           <Route path="/order" element={<OrderDetails/>}/>
-          
+          <Route path="/orders" element={<Order/>}/>   
         </Route>
+          <Route path="/register" element={<RegistrationForm/>}/>
+          <Route path="/login" element={<LoginForm/>}/>
       </Routes>
     </Router>
     
