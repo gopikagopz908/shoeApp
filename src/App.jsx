@@ -13,20 +13,22 @@ import Cart from './pages/cart'
 import OrderDetails from './pages/Orderform'
 import Order from './pages/modal/order'
 
+
 function App() {
   
 
   return (
     <>
     <Router>
-      {/* <Link to="/login">login</Link> */}
+      
       <Routes>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path=":category" element={<Products/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/order" element={<OrderDetails/>}/>
-          <Route path="/orders" element={<Order/>}/>   
+          <Route path="/orders" element={<Order/>}/> 
+          
         </Route>
           <Route path="/register" element={<RegistrationForm/>}/>
           <Route path="/login" element={<LoginForm/>}/>

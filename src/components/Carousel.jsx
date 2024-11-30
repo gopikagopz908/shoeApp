@@ -21,8 +21,8 @@ const ShoeCarousel = () => {
               }}
               src="https://rockcitykicks.com/cdn/shop/files/NikeDunkHIRetroSE_Phantom_RacerBlue-PaleIvory_FV6612-0011.jpg?v=1721920204"
               className="d-block w-100"
-              alt="Shoe 1"
-            />
+              alt="Shoe 1"/>
+            
             <div className="carousel-caption d-none d-md-block">
               <h5>Sleek Running Shoes</h5>
               <p>Comfortable and stylish for your daily runs.</p>

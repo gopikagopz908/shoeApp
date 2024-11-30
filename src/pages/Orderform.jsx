@@ -70,9 +70,11 @@ const paymentOptions = [
 ];
 
 const OrderDetails = () => {
+  
   const id=localStorage.getItem('id')
+  
   const navigate=useNavigate()
-  const{cart,orders=[],totalAmount,setOrders}=useContext(userContext)
+  const{cart,orders=[],totalAmount}=useContext(userContext)
   return (
     <div className="container mt-5 justify-content-center">
     <div
@@ -246,8 +248,8 @@ const OrderDetails = () => {
               <ErrorMessage
                 name="paymentMethod"
                 component="div"
-                className="text-danger mt-1"
-              />
+                className="text-danger mt-1"/>
+              
             </div>
   
             
@@ -258,8 +260,8 @@ const OrderDetails = () => {
                 style={{
                   width: "100%", 
                   padding: "10px", 
-                }}
-              >
+                }}>
+              
                 Place Order
               </button>
             </div>

@@ -24,7 +24,6 @@ const navigate=useNavigate()
             className="btn btn-success"
             onClick={()=>navigate('/order')}//form
             disabled={cart.length === 0} >
-          
             Buy Now
           </button>
         </div>

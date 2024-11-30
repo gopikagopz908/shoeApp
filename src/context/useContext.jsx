@@ -4,11 +4,16 @@ import { createContext } from 'react'
  
  export const userContext=createContext()
 function Context({children}) {
-    const id =localStorage.getItem("id")
+    
+  const id =localStorage.getItem("id")
+    
     const[cart,setCart]=useState([])
     const [isLogged,setislogged]=useState(false)
     const [products, setProducts] = useState([]);
     const[orders,setOrders]=useState([])
+  
+   
+    
 
 useEffect(()=>{
 
@@ -28,8 +33,10 @@ if(id){
         console.error("Error fetching products:", error);
       });
   }, []);
-  useEffect(()=>{
+  useEffect(()=>{                                        
+
     axios.get(`http://localhost:3000/users/${id}`)
+    
     .then((res=>{
         setCart(res.data.cart)
     }))
@@ -42,7 +49,7 @@ if(id){
   useEffect(()=>{
     axios.get(`http://localhost:3000/users/${id}`)
     .then((res=>{
-        setOrders(res.data?.order)
+        setOrders(res.data.order)
     }))
     .catch((error)=>{
         console.log(error)
@@ -73,10 +80,10 @@ try {
 }     
 
   }
- const updatequantity=async(product,num)=>{
-    if(num===-1&&product.quantity===1)
+ const updatequantity=async(cartProduct,num)=>{
+    if(num===-1&&cartProduct.quantity===1)
     return
-    const newcart=cart.map((item)=>item.id===product.id?{...item,quantity:item.quantity+num}:item)
+    const newcart=cart.map((item)=>item.id===cartProduct.id?{...item,quantity:item.quantity+num}:item)
     await axios.patch(`http://localhost:3000/users/${id}`,{cart:[...newcart]})
      setCart(newcart)
 

@@ -22,8 +22,8 @@ const Order = () => {
               <div
                 key={index}
                 className="list-group-item mb-3 border-0 shadow-sm rounded"
-                style={{ backgroundColor: "#f9f9f9" }}
-              >
+                style={{ backgroundColor: "#f9f9f9" }}>
+              
                 <h5 className="mb-3">Order {index + 1}</h5>
                 {order.cartitems.map((item) => (
                   <div

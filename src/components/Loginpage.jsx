@@ -34,12 +34,8 @@ const Loginform = () => {
   const handleSubmit = async (values) => {
   
     const user = userdata.find((user) => user.email === values.email && user.password === values.password);
-    
-if(user.username==="admin"&&user.password==="123456"){
-  navigate('/admin')
-  alert("admin logined")
-  return
-}
+  
+
     if (user) {
       alert('Login Successful!');
       

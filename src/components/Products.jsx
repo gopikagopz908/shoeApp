@@ -28,8 +28,7 @@ function Products() {
   return (
     <div className="container">
       <div className="row">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product) => (<ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
