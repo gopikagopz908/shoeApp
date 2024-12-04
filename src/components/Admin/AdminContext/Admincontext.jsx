@@ -41,9 +41,34 @@ function Admin({children}) {
             console.log(error)
         })
     },[])
+    // const handleBlock =async (user) => {
+    // try {
+    //     await axios.patch(`http://localhost:3000/users/${user.id}`,{isBlocked:!user.isBlocked})
+    //     const block=user.isBlocked?"unblocked":'blocked'
+    //     alert(`user is ${block} is successfully`)
+    // } catch (error) {
+    //     console.log(error)
+    // }
+
+    //     }
+    const handleBlock = (user) => {
+        axios
+          .patch(`http://localhost:3000/users/${user.id}`, { isBlocked: !user.isBlocked }) // Update on the backend
+          .then(() => {
+            // Update the local users state after a successful API response
+            setUsers((prevUsers) =>
+              prevUsers.map((u) =>
+                u.id === user.id ? { ...u, isBlocked: !user.isBlocked } : u
+              )
+            );
+          })
+          .catch((error) => {
+            console.error("Error updating block status:", error);
+          });
+      };
   return (
     <div>
-        <AdminContext.Provider value={{users,setUsers,products,setProducts,totalorders,toggled, setToggled,broken, setBroken}}>
+        <AdminContext.Provider value={{users,setUsers,products,setProducts,totalorders,toggled, setToggled,broken, setBroken,handleBlock}}>
             {children}
 
         </AdminContext.Provider>

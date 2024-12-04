@@ -5,6 +5,7 @@
       "username": "arshida",
       "email": "yasar@gmail.com",
       "password": "12345678",
+      "isBlocked": false,
       "confirmPassword": "12345678",
       "cart": [
         {
@@ -55,6 +56,7 @@
       "username": "gopika",
       "email": "gopika@gmail.com",
       "password": "555555",
+      "isBlocked": false,
       "confirmPassword": "555555",
       "cart": [
         {
@@ -280,6 +282,7 @@
       "id": "2cfe",
       "username": "minu",
       "email": "minu@gmail.com",
+      "isBlocked": false,
       "password": "123456",
       "confirmPassword": "123456",
       "cart": [
@@ -365,6 +368,7 @@
       "id": "c7f9",
       "username": "saabu",
       "email": "sab@gmail.com",
+      "isBlocked": false,
       "password": "777777",
       "confirmPassword": "777777",
       "cart": [],

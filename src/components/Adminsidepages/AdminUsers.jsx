@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaEye, FaBan } from "react-icons/fa";
 import { AdminContext } from "../Admin/AdminContext/Admincontext";
 
 const UsersTable = () => {
-  const{users}=useContext(AdminContext)
+  const{users,handleBlock}=useContext(AdminContext)
 
-  // Handlers
-  const handleBlock = (id) => {
-    alert(`User with ID ${id} has been blocked.`);
-  };
+ 
+ 
+  
 
   const handleViewOrders = (id) => {
     alert(`Viewing orders for user with ID ${id}.`);
@@ -47,13 +46,13 @@ const UsersTable = () => {
                 
                   <FaEye className="me-1" />  Orders
                 </button>
-                <button style={{width:"65px",height:"35px",fontSize:"13px"}}
+                <button style={{width:"70px",height:"45px",fontSize:"13px"}}
 
-                  onClick={() => handleBlock(user.id)}
+                  onClick={() => handleBlock(user)}
                   className="border-0 rounded-2 text-white bg-danger ms-2">
                   
                 
-                  <FaBan className="me-1" /> Block
+                  <FaBan className="me-1" />{user?.isBlocked?"unblock":"block"}
                 </button>
               </td>
             </tr>

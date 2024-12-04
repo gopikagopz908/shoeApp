@@ -47,6 +47,7 @@ const RegistrationForm = () => {
             email: '',
             password: '',
             confirmPassword: '',
+            isBlocked:false,
             cart:[],
             order:[]
           }}

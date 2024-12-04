@@ -4,8 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap styles
 import Admin, { AdminContext } from '../Admin/AdminContext/Admincontext';
 
 import axios from 'axios';
+import EditProductModal from './modal/editProduct';
 const ProductTable = () => {
   const { products } = useContext(AdminContext);
+  const [showModal, setShowModal] = useState(false);
+const [selectedProduct, setSelectedProduct] = useState(null);
+
 
   const[category,setCategory]=useState([])
   
@@ -26,17 +30,23 @@ const ProductTable = () => {
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
-  }, [category]);
-
+  }, []);
+  const handleEdit = (product) => {
+    setSelectedProduct(product);
+    setShowModal(true);
+  };
+  
+  const handleSave = (updatedProduct) => {
+    console.log('Updated Product:', updatedProduct);
+    // Implement save logic, e.g., make an API call to update the product
+    setShowModal(false);
+  };
+  
     
   
 
 
-  // Handling the edit action
-  const handleEdit = (product) => {
-    console.log('Edit product:', product);
-    // Add your edit functionality here
-  };
+
 
   // Handling the delete action
   const handleDelete = (productId) => {
@@ -121,6 +131,13 @@ const ProductTable = () => {
           ))}
         </tbody>
       </table>
+      <EditProductModal
+  show={showModal}
+  handleClose={() => setShowModal(false)}
+  product={selectedProduct}
+  handleSave={handleSave}
+/>
+
     </div>
   );
 };
