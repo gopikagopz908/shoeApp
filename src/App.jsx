@@ -13,6 +13,13 @@ import Cart from './pages/cart'
 import OrderDetails from './pages/Orderform'
 import Order from './pages/modal/order'
 
+import AdminLayout from './components/Admin/AdminLayout'
+import Dashboard from './components/Dashboard/Dashboard'
+import ProductTable from './components/Adminsidepages/adminproducts'
+import UsersTable from './components/Adminsidepages/AdminUsers'
+import OrdersList from './components/Adminsidepages/Totalorders'
+import BlockTable from './components/Adminsidepages/BlockTable'
+
 
 function App() {
   
@@ -22,12 +29,20 @@ function App() {
     <Router>
       
       <Routes>
+        <Route path="/admin" element={<AdminLayout/>}>
+          <Route index element={<Dashboard/>}/>
+          <Route path="products" element={<ProductTable/>}/>
+          <Route path="users"  element={<UsersTable/>}/>
+          <Route path="totalorders" element={<OrdersList/>}/>
+          <Route path="block" element={<BlockTable/>}/>
+        </Route>
         <Route path="/" element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path=":category" element={<Products/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/order" element={<OrderDetails/>}/>
-          <Route path="/orders" element={<Order/>}/> 
+          <Route path="/orders" element={<Order/>}/>
+          
           
         </Route>
           <Route path="/register" element={<RegistrationForm/>}/>

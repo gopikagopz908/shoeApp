@@ -110,9 +110,12 @@ const OrderDetails = () => {
             pincode: values.pincode,
             paymentMethod: values.paymentMethod,
             cartitems: cart,
+            Date:new Date().toISOString(),
             totalAmount,
+            
+            
           };
-  
+  axios.post("http://localhost:3000/totalorders",{...newOrder,id})
           axios
             .patch(`http://localhost:3000/users/${id}`, {
               order: [...orders, newOrder],

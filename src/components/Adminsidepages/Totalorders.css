@@ -1,0 +1,43 @@
+/* Disable card hover effects */
+.no-hover {
+  transition: none !important; /* Disable hover transition */
+}
+.no-hover:hover {
+  transform: none !important; /* Prevent scaling or shadow changes on hover */
+  box-shadow: none !important; /* Remove shadow effects */
+}
+/* Container for horizontal scroll */
+.cart-items-container {
+  display: flex;
+  gap: 1rem; /* Adds space between items */
+  overflow-x: auto; /* Enables horizontal scrolling */
+  padding-bottom: 1rem; /* Adds space at the bottom for better visibility */
+  scrollbar-width: thin; /* For modern browsers */
+}
+
+/* Styling individual cart items */
+.cart-item {
+  flex: 0 0 auto; /* Prevents shrinking and ensures items take their natural width */
+  text-align: center;
+  max-width: 200px; /* Adjust max width as needed */
+  height:"250px"
+}
+
+/* Customizing the scrollbar */
+.cart-items-container::-webkit-scrollbar {
+  height: 8px; /* Height of the scrollbar */
+}
+
+.cart-items-container::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Scrollbar thumb color */
+  border-radius: 4px; /* Round edges */
+}
+
+.cart-items-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
+}
+
+.order-card{
+  height: 130vh !important;
+}
+

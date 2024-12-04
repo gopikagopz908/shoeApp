@@ -34,7 +34,12 @@ const Loginform = () => {
   const handleSubmit = async (values) => {
   
     const user = userdata.find((user) => user.email === values.email && user.password === values.password);
-  
+  if(user.email==="admin@gmail.com"&&user.password==="888888"){
+    localStorage.setItem('id', user.id);
+    navigate("/admin")
+    alert("admin logined")
+    return
+  }
 
     if (user) {
       alert('Login Successful!');
@@ -55,7 +60,7 @@ const Loginform = () => {
         <Formik
           initialValues={{
             email: '',
-            password: '',
+            password: ''
           }}
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
@@ -63,7 +68,7 @@ const Loginform = () => {
           {() => (
             <Form>
               <div className="mb-3">
-                <label htmlFor="username" className="form-label">
+                <label htmlFor="email" className="form-label">
                   Email
                 </label>
                 <Field
@@ -71,9 +76,9 @@ const Loginform = () => {
                   id="email"
                   name="email"
                   className="form-control"
-                  placeholder="Enter your username"
+                  placeholder="Enter your email"
                 />
-                <ErrorMessage name="username" component="div" className="text-danger" />
+                <ErrorMessage name="email" component="div" className="text-danger" />
               </div>
 
               <div className="mb-3">
