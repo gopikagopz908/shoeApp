@@ -88,7 +88,7 @@ try {
      setCart(newcart)
 
  }
- const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+ const totalAmount = cart?.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
   return (
     <div>
