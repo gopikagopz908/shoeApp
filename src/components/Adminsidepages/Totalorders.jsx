@@ -44,7 +44,8 @@ const OrdersList = () => {
             <h6>Cart Items:</h6>
             <div className="cart-items-container">
               {order.cartitems.map((item) => (
-                <div style={{ width: '180px',height:'263px' }}  className="cart-item shadow p-3 mb-5  rounded bg-primary" key={item.id}>
+                <div style={{ width: '180px',height:'263px'}} 
+ className="cart-item shadow p-3 mb-5  rounded bg-primary " key={item.id}>
                   <img 
                     src={item.image} 
                     alt={item.title} 

@@ -1,21 +1,12 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState,useEffect, useContext } from 'react';
+import Admin, { AdminContext } from '../Admin/AdminContext/Admincontext';
 
 const BlockTable = () => {
-  const [users, setUsers] = useState([
-    { id: 1, name: "John Doe", email: "john.doe@example.com", status: "Active" },
-    { id: 2, name: "Jane Smith", email: "jane.smith@example.com", status: "Active" },
-    { id: 3, name: "Alice Johnson", email: "alice.johnson@example.com", status: "Active" },
-  ]);
-
-  const toggleBlock = (id) => {
-    setUsers((prevUsers) =>
-      prevUsers.map((user) =>
-        user.id === id
-          ? { ...user, status: user.status === "Active" ? "Blocked" : "Active" }
-          : user
-      )
-    );
-  };
+  const{handleBlock,users}=useContext(AdminContext)
+  
+const filtered=users.filter((item)=>item.role!=="admin")
+  
 
   return (
     <>
@@ -36,15 +27,15 @@ const BlockTable = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
+          {filtered.map((user) => (
             <tr key={user.id}>
               <td style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>{user.id}</td>
-              <td style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>{user.name}</td>
+              <td style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>{user.username}</td>
               <td style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>{user.email}</td>
               <td style={{ padding: "10px", borderBottom: "1px solid #ddd" }}>
                 <button
                   style={{
-                    backgroundColor: user.status === "Active" ? "#FF4D4D" : "#4CAF50",
+                    backgroundColor: user?.isBlocked? "#4CAF50": "#FF4D4D",
                     color: "white",
                     border: "none",
                     padding: "10px 16px",
@@ -57,16 +48,10 @@ const BlockTable = () => {
                     height:"35px",
                     width:"80px"
                   }}
-                  onClick={() => toggleBlock(user.id)}
-                  onMouseOver={(e) => {
-                    e.target.style.transform = "scale(1.05)";
-                  }}
-                  onMouseOut={(e) => {
-                    e.target.style.transform = "scale(1)";
-                  }}
-                >
-                  {user.status === "Active" ? "Block" : "Unblock"}
-                </button>
+                  onClick={() => handleBlock(user)}>
+                  
+                
+               {user?.isBlocked?"unblock":"block"}</button>
               </td>
             </tr>
           ))}

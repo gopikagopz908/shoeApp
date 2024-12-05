@@ -5,7 +5,7 @@
       "username": "arshida",
       "email": "yasar@gmail.com",
       "password": "12345678",
-      "isBlocked": false,
+      "isBlocked": true,
       "confirmPassword": "12345678",
       "cart": [
         {
@@ -56,7 +56,7 @@
       "username": "gopika",
       "email": "gopika@gmail.com",
       "password": "555555",
-      "isBlocked": false,
+      "isBlocked": true,
       "confirmPassword": "555555",
       "cart": [
         {
@@ -282,7 +282,7 @@
       "id": "2cfe",
       "username": "minu",
       "email": "minu@gmail.com",
-      "isBlocked": false,
+      "isBlocked": true,
       "password": "123456",
       "confirmPassword": "123456",
       "cart": [
@@ -362,13 +362,14 @@
       "username": "admin",
       "email": "admin@gmail.com",
       "password": "888888",
-      "id": "e483"
+      "id": "e483",
+      "isBlocked": true
     },
     {
       "id": "c7f9",
       "username": "saabu",
       "email": "sab@gmail.com",
-      "isBlocked": false,
+      "isBlocked": true,
       "password": "777777",
       "confirmPassword": "777777",
       "cart": [],
@@ -642,7 +643,8 @@
       "color": "black",
       "category": "running",
       "discount": 10,
-      "stock": 10
+      "stock": 10,
+      "quantity": 1
     },
     {
       "id": "3",
@@ -944,17 +946,17 @@
       "stock": 10
     },
     {
-      "id": "dfad",
-      "title": "Nike Air Max 270",
-      "image": "https://static.nike.com/a/images/t_default/89a9429b-c0d9-4699-b897-c261fddaf221/W+AIR+MAX+270.png",
-      "price": 7400,
-      "description": "The Nike Air Max 270 offers next-level comfort with a large Air unit, breathable mesh upper, and sleek design. Available in Black/White and Blue/Red.",
-      "brand": "Nike",
-      "model": "Air Max 270",
+      "id": "5ae1",
+      "title": "nice shoe",
+      "image": "https://assets.ajio.com/medias/sys_master/root/20231027/TZ6X/653bd9f1ddf77915195f0f37/-473Wx593H-469551545-black-MODEL.jpg",
+      "price": "767667",
+      "description": "wsed",
+      "brand": "nike",
+      "model": "AirMax 2024 Edition",
       "color": "black",
-      "category": "sport",
-      "discount": 25,
-      "stock": 12
+      "category": "sports",
+      "discount": 22,
+      "stock": 2
     }
   ],
   "totalorders": [

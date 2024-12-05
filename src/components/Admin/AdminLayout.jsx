@@ -74,7 +74,7 @@ const AdminLayout = () => {
         style={{color:"black",fontSize:"15px",fontWeight:"bold"}}/>} icon={<FaUsers />}>
     Users</MenuItem>
 
-          <MenuItem component={<Link to="/Admin/products"
+          <MenuItem component={<Link to="/Admin/products/All"
            style={{color:"black",fontSize:"15px",fontWeight:"bold"}}/>} icon={<FaBoxOpen />}>Products</MenuItem>
 
           <MenuItem  component={<Link to="/admin/totalorders" style={{color:"black",fontSize:"15px",fontWeight:"bold"}}/>}icon={<FaShoppingCart />}>Orders</MenuItem>

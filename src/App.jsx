@@ -19,6 +19,7 @@ import ProductTable from './components/Adminsidepages/adminproducts'
 import UsersTable from './components/Adminsidepages/AdminUsers'
 import OrdersList from './components/Adminsidepages/Totalorders'
 import BlockTable from './components/Adminsidepages/BlockTable'
+import ViewOrders from './components/Adminsidepages/modal/viewOrders'
 
 
 function App() {
@@ -31,8 +32,9 @@ function App() {
       <Routes>
         <Route path="/admin" element={<AdminLayout/>}>
           <Route index element={<Dashboard/>}/>
-          <Route path="products" element={<ProductTable/>}/>
+          <Route path="products/:category" element={<ProductTable/>}/>
           <Route path="users"  element={<UsersTable/>}/>
+          <Route path="view/:id" element={<ViewOrders/>}/>
           <Route path="totalorders" element={<OrdersList/>}/>
           <Route path="block" element={<BlockTable/>}/>
         </Route>

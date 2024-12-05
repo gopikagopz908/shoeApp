@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const EditProductModal = ({ show, handleClose, product, onSave }) => {
+  console.log(product)
   const initialValues = {
     title: product?.title || '',
     price: product?.price || '',
@@ -17,7 +18,7 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Product name is required'),
+    title: Yup.string().required('Product name is required'),
     price: Yup.number()
       .required('Price is required')
       .positive('Price must be greater than zero'),
@@ -45,7 +46,7 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
   return (
     <div className={`modal ${show ? 'd-block' : 'd-none'}`} tabIndex="-1" role="dialog">
       <div className="modal-dialog" role="document">
-        <div className="modal-content">
+        <div className="modal-content" style={{ backgroundColor: 'grey' }}>
           <div className="modal-header">
             <h5 className="modal-title">Edit Product</h5>
             <button
@@ -67,16 +68,15 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
                 <div className="modal-body">
                   {/* Existing Fields */}
                   <div className="form-group">
-                    <label htmlFor="title">Product title</label>
+                    <label htmlFor="title"> title</label>
                     <Field
                       type="text"
                       id="title"
                       name="title"
-                      
                       className="form-control"
                     />
                     <ErrorMessage
-                      name="name"
+                      name="title"
                       component="div"
                       className="text-danger"
                     />

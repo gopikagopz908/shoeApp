@@ -1,15 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import { FaEye, FaBan } from "react-icons/fa";
 import { AdminContext } from "../Admin/AdminContext/Admincontext";
+import { useNavigate } from "react-router-dom";
 
 const UsersTable = () => {
+  const navigate=useNavigate()
   const{users,handleBlock}=useContext(AdminContext)
 
- 
+  const filtered=users.filter((item)=>item.role!=="admin")
+
  
   
 
   const handleViewOrders = (id) => {
+   
+    navigate(`view/${id}`)
     alert(`Viewing orders for user with ID ${id}.`);
   };
 
@@ -33,7 +38,7 @@ const UsersTable = () => {
         </thead>
         <tbody style={{ backgroundColor: "#f0f0f0 !important" }}>
         
-          {users.map((user) => (
+          {filtered.map((user) => (
             <tr key={user.id}>
               <td>{user.id}</td>
               <td>{user.username}</td>
@@ -45,15 +50,28 @@ const UsersTable = () => {
                   
                 
                   <FaEye className="me-1" />  Orders
-                </button>
-                <button style={{width:"70px",height:"45px",fontSize:"13px"}}
-
-                  onClick={() => handleBlock(user)}
-                  className="border-0 rounded-2 text-white bg-danger ms-2">
+                  </button>
+                
+                <button
+                  style={{
+                    backgroundColor: user?.isBlocked? "#4CAF50": "#FF4D4D",
+                    color: "white",
+                    border: "none",
+                    padding: "10px 16px",
+                    borderRadius: "8px",
+                    justifyContent:"center",
+                    alignItems:"center",
+                    cursor: "pointer",
+                    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+                    transition: "all 0.3s ease",
+                    height:"35px",
+                    width:"80px",
+                    marginLeft:"10px"
+                  }}
+                  onClick={() => handleBlock(user)}>
                   
                 
-                  <FaBan className="me-1" />{user?.isBlocked?"unblock":"block"}
-                </button>
+               {user?.isBlocked?"unblock":"block"}</button>
               </td>
             </tr>
           ))}
