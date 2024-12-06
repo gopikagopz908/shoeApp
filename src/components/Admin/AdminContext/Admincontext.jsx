@@ -41,16 +41,7 @@ function Admin({children}) {
             console.log(error)
         })
     },[])
-    // const handleBlock =async (user) => {
-    // try {
-    //     await axios.patch(`http://localhost:3000/users/${user.id}`,{isBlocked:!user.isBlocked})
-    //     const block=user.isBlocked?"unblocked":'blocked'
-    //     alert(`user is ${block} is successfully`)
-    // } catch (error) {
-    //     console.log(error)
-    // }
-
-    //     }
+    
     const handleBlock = (user) => {
         axios
           .patch(`http://localhost:3000/users/${user.id}`, { isBlocked: !user.isBlocked }) // Update on the backend
@@ -66,9 +57,10 @@ function Admin({children}) {
             console.error("Error updating block status:", error);
           });
       };
+      const totalRevenue=totalorders.reduce((acc,item)=>acc+item.totalAmount,0)
   return (
     <div>
-        <AdminContext.Provider value={{users,setUsers,products,setProducts,totalorders,toggled, setToggled,broken, setBroken,handleBlock}}>
+        <AdminContext.Provider value={{users,setUsers,products,setProducts,totalorders,toggled, setToggled,broken, setBroken,handleBlock,totalRevenue}}>
             {children}
 
         </AdminContext.Provider>

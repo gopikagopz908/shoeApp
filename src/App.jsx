@@ -34,7 +34,7 @@ function App() {
           <Route index element={<Dashboard/>}/>
           <Route path="products/:category" element={<ProductTable/>}/>
           <Route path="users"  element={<UsersTable/>}/>
-          <Route path="view/:id" element={<ViewOrders/>}/>
+          <Route path="users/view/:id" element={<ViewOrders/>}/>
           <Route path="totalorders" element={<OrdersList/>}/>
           <Route path="block" element={<BlockTable/>}/>
         </Route>

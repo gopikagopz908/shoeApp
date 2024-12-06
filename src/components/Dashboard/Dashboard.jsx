@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import "./Dashboard.css";
 import { AdminContext } from '../Admin/AdminContext/Admincontext';
+import CountUp from "react-countup";
+import ProductCategoryChart from '../Adminsidepages/piechart';
 
 function Dashboard() {
-  const { users, products,totalorders } = useContext(AdminContext);
+  const { users, products,totalorders,totalRevenue } = useContext(AdminContext);
 
   return (
     <div className="dashboard-container">
@@ -13,7 +15,7 @@ function Dashboard() {
         <div className="row gy-4"> {/* gy-4 for spacing between rows */}
           {/* Card 1 (Blue Background) */}
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <div className="card card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
+            <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
               <h5
                 style={{
                   fontWeight: "700",
@@ -27,13 +29,14 @@ function Dashboard() {
               >
                 Users
               </h5>
-              <p style={{ fontSize: "24px", color: "#fff", fontWeight: "bold" }}>{users.length}+</p>
+              <p style={{ fontSize: "24px", color: "#fff", fontWeight: "bold" }}>
+                <CountUp end={users.length} duration={2.5}/>+</p>
             </div>
           </div>
 
           {/* Card 2 (White Background) */}
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <div className="card card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
+            <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
               <h5
                 style={{
                   fontWeight: "700",
@@ -47,13 +50,14 @@ function Dashboard() {
               >
                 Products
               </h5>
-              <p style={{ fontSize: "24px", color: "blue", fontWeight: "bold" }}>{products.length}+</p>
+              <p style={{ fontSize: "24px", color: "blue", fontWeight: "bold" }}>
+                <CountUp end={products.length} duration={2.5}/>+</p>
             </div>
           </div>
 
           {/* Card 3 (Blue Background) */}
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <div className="card card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
+            <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
               <h5
                 style={{
                   fontWeight: "700",
@@ -67,13 +71,14 @@ function Dashboard() {
               >
                 Orders
               </h5>
-              <p style={{ fontSize: "24px", color: "#fff", fontWeight: "bold" }}>{totalorders.length}+</p>
+              <p style={{ fontSize: "24px", color: "#fff", fontWeight: "bold" }}>
+                <CountUp end={totalorders.length} duration={2.5}/>+</p>
             </div>
           </div>
 
           {/* Card 4 (White Background) */}
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
-            <div className="card card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
+            <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
               <h5
                 style={{
                   fontWeight: "700",
@@ -87,9 +92,11 @@ function Dashboard() {
               >
                 Revenue
               </h5>
-              <p style={{ fontSize: "24px", color: "blue", fontWeight: "bold" }}></p>
+              <p style={{ fontSize: "24px", color: "blue", fontWeight: "bold" }}>
+              <CountUp end={totalRevenue} duration={2.5}/>+</p>
             </div>
           </div>
+          <ProductCategoryChart/>
 
         </div>
       </div>

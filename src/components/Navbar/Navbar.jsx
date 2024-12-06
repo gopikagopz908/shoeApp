@@ -7,6 +7,7 @@ import "./Navbar.css"
 function Navbar() {
   const {cart,isLogged}=useContext(userContext)
   
+  
   return (
     <nav className="navbar navbar-expand-md ">
       <div className="container-fluid">
