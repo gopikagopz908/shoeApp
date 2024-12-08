@@ -5,7 +5,7 @@ import { userContext } from '../../context/useContext';
 import "./Navbar.css"
 
 function Navbar() {
-  const {cart,isLogged}=useContext(userContext)
+  const {cart=[],isLogged}=useContext(userContext)
   
   
   return (

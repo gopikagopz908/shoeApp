@@ -389,9 +389,7 @@
       "role": "admin",
       "username": "admin",
       "email": "admin@gmail.com",
-      "password": "888888",
-      "id": "e483",
-      "isBlocked": true
+      "password": "888888"
     },
     {
       "id": "c7f9",
@@ -651,7 +649,7 @@
       "email": "suhad@gmail.com",
       "password": "111111",
       "confirmPassword": "111111",
-      "isBlocked": true,
+      "isBlocked": false,
       "cart": [],
       "order": [
         {
@@ -709,21 +707,87 @@
           "totalAmount": 19000
         }
       ]
+    },
+    {
+      "id": "8cca",
+      "username": "salih",
+      "email": "salih@gmail.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "isBlocked": false,
+      "cart": [
+        {
+          "id": "2",
+          "title": "Nike Air Zoom Pegasus 40",
+          "image": "https://images.nike.com/is/image/DotCom/CW7356_006_A_PREM?fmt=png-alpha&bgc=fafafa&wid=500&hei=500",
+          "price": 6200,
+          "description": "Nike's Air Zoom Pegasus 40 features an engineered mesh upper for enhanced breathability, paired with Nike’s signature Air Zoom cushioning for comfort and durability. Available in colorways like Black/White/Anthracite and Pure Platinum/University Red/White.",
+          "brand": "Nike",
+          "model": "Air Zoom Pegasus 40",
+          "color": "black",
+          "category": "running",
+          "discount": 10,
+          "stock": 10,
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "title": "Puma Future Rider Play On",
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
+          "price": 3500,
+          "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
+          "brand": "Puma",
+          "model": "Future Rider Play On",
+          "color": "white",
+          "category": "casual",
+          "discount": 15,
+          "stock": 10,
+          "quantity": 1
+        }
+      ],
+      "order": [
+        {
+          "fullName": "salih",
+          "phoneNumber": "5678998545",
+          "address": "12wedrf",
+          "state": "e234fr",
+          "pincode": "898765",
+          "paymentMethod": "creditCard",
+          "cartitems": [
+            {
+              "id": "3",
+              "title": "Puma Future Rider Play On",
+              "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
+              "price": 3500,
+              "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
+              "brand": "Puma",
+              "model": "Future Rider Play On",
+              "color": "white",
+              "category": "casual",
+              "discount": 15,
+              "stock": 10,
+              "quantity": 1
+            }
+          ],
+          "Date": "2024-12-06T13:55:08.867Z",
+          "totalAmount": 3500
+        }
+      ]
     }
   ],
   "products": [
     {
       "id": "1",
-      "title": "Crazy IIInfinity 130",
+      "title": "Crazy IIInfinity 135",
       "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e126d08abaa3434cb019796deaac3f0b_9366/Nova_IIInfinity_Shoes_Blue_ID3972_01_00_standard.jpg",
-      "price": 5500,
+      "price": 5496,
       "description": "Part of the Adidas IIInfinity lineup, this model combines a synthetic upper with a textile lining and rubber outsole, providing a sleek look and good comfort for casual wear. It’s available in various colorways, such as Cloud White/Core Black/Carbon, Blue Spark/Core Black/Carbon, and Legend Ink/Preloved Red/Core Black​",
       "brand": "Adidas",
       "model": "Crazy IIInfinity 130",
       "color": "silver",
       "category": "sports",
       "discount": 11,
-      "stock": 10
+      "stock": 7
     },
     {
       "id": "2",
@@ -1023,7 +1087,7 @@
       "color": "white",
       "category": "casual",
       "discount": 15,
-      "stock": 10
+      "stock": 13
     },
     {
       "id": "25",
@@ -1035,7 +1099,7 @@
       "model": "Cali Star",
       "color": "white",
       "category": "casual",
-      "discount": 18,
+      "discount": 15,
       "stock": 10
     },
     {
@@ -1048,7 +1112,7 @@
       "model": "AirMax 2024 Edition",
       "color": "black",
       "category": "running",
-      "discount": 11,
+      "discount": 10,
       "stock": 6
     }
   ],
@@ -1313,6 +1377,33 @@
       ],
       "Date": "2024-12-06T09:19:41.513Z",
       "totalAmount": 19000
+    },
+    {
+      "id": "8cca",
+      "fullName": "salih",
+      "phoneNumber": "5678998545",
+      "address": "12wedrf",
+      "state": "e234fr",
+      "pincode": "898765",
+      "paymentMethod": "creditCard",
+      "cartitems": [
+        {
+          "id": "3",
+          "title": "Puma Future Rider Play On",
+          "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/371149/01/sv01/fnd/PNA/fmt/png/Future-Rider-Play-On-Shoes",
+          "price": 3500,
+          "description": "Puma’s Future Rider Play On comes with a retro-inspired design, featuring a combination of nylon and suede upper, paired with Rider Foam for extra cushioning. Available in colorways like White/Gray/Vibrant Orange.",
+          "brand": "Puma",
+          "model": "Future Rider Play On",
+          "color": "white",
+          "category": "casual",
+          "discount": 15,
+          "stock": 10,
+          "quantity": 1
+        }
+      ],
+      "Date": "2024-12-06T13:55:08.867Z",
+      "totalAmount": 3500
     }
   ]
 }

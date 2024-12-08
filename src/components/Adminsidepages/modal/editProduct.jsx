@@ -37,7 +37,7 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
       .max(100, 'Discount cannot exceed 100%'),
   });
 
-  const handleSubmit = async(values, { setSubmitting }) => {
+  const handleSubmit = async(values) => {
     try {
       await axios
       .patch(`http://localhost:3000/products/${product.id}`, values)
@@ -48,9 +48,7 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
     }
   };
 
-  if (!product) {
-    return null; // Show nothing or a loader if product data is not available
-  }
+
 
   return (
     <div className={`modal ${show ? 'd-block' : 'd-none'}`} tabIndex="-1" role="dialog">
@@ -76,7 +74,7 @@ const EditProductModal = ({ show, handleClose, product, onSave }) => {
             {({ isSubmitting }) => (
               <Form>
                 <div className="modal-body">
-                  {/* Form Fields */}
+                
                   <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <Field type="text" id="title" name="title" className="form-control" />

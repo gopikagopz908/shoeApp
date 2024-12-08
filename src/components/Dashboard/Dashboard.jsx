@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import "./Dashboard.css";
 import { AdminContext } from '../Admin/AdminContext/Admincontext';
 import CountUp from "react-countup";
@@ -12,14 +12,13 @@ function Dashboard() {
     <div className="dashboard-container">
       <div className="container">
         <h3 className='brd-head'>Details</h3>
-        <div className="row gy-4"> {/* gy-4 for spacing between rows */}
-          {/* Card 1 (Blue Background) */}
+        <div className="row gy-4"> 
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
               <h5
                 style={{
                   fontWeight: "700",
-                  color: "#fff", // White text for contrast
+                  color: "#fff", 
                   fontSize: "20px",
                   fontFamily: "'Poppins', sans-serif",
                   letterSpacing: "1px",
@@ -34,7 +33,7 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Card 2 (White Background) */}
+          
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
               <h5
@@ -55,13 +54,13 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Card 3 (Blue Background) */}
+          
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#4B8BF5" }}>
               <h5
                 style={{
                   fontWeight: "700",
-                  color: "#fff", // White text for contrast
+                  color: "#fff", 
                   fontSize: "20px",
                   fontFamily: "'Poppins', sans-serif",
                   letterSpacing: "1px",
@@ -76,7 +75,7 @@ function Dashboard() {
             </div>
           </div>
 
-          {/* Card 4 (White Background) */}
+          
           <div className="col-12 col-sm-6 col-md-3 d-flex justify-content-center">
             <div className="card mt-md-4 mt-0 card-brd p-3 text-center" style={{ backgroundColor: "#ffffff" }}>
               <h5

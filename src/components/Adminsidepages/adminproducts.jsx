@@ -15,7 +15,7 @@ const ProductTable = () => {
   const handleNavigation = (event) => {
     const value = event.target.value;
     if (value) {
-      navigate(`/Admin/products/${value}`); // Navigate to the dynamic route
+      navigate(`/Admin/products/${value}`); 
     }
   };
   const { products } = useContext(AdminContext);
@@ -30,6 +30,7 @@ const ProductTable = () => {
     axios
       .get("http://localhost:3000/products")
       .then((res) => {
+        
         if (category === "All") {
           setCategory(res.data);
         } else {
@@ -49,8 +50,7 @@ const ProductTable = () => {
   };
 
   const handleSave = (updatedProduct) => {
-    console.log("Updated Product:", updatedProduct);
-    // Implement save logic, e.g., make an API call to update the product
+    
     setShowModal(false);
   };
 
@@ -60,7 +60,7 @@ const ProductTable = () => {
       .delete(`http://localhost:3000/products/${productId}`)
       .then(() => {
         alert("Product deleted successfully");
-        // Remove the product from the state
+        
         setCategory(products.filter((product) => product.id !== productId));
       })
       .catch((error) => {

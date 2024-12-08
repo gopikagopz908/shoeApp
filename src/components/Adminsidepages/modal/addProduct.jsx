@@ -1,7 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import axios from "axios"; // Import axios
+import axios from "axios"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
@@ -27,7 +27,7 @@ const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
       .min(0, "Stock cannot be negative"),
   });
 
-  // Initial Form Values
+  
   const initialValues = {
     title: "",
     image: "",
@@ -98,7 +98,7 @@ const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             enableReinitialize={true}
-            onSubmit={handleSubmit} // Use handleSubmit function here
+            onSubmit={handleSubmit} 
           >
             {({ isSubmitting }) => (
               <Form>

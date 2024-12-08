@@ -3,10 +3,10 @@
     width:225px;
 }
 .dashboard-container {
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 1rem; /* Optional: for spacing */
-    background-color: #cde0f3; /* Optional: light background for contrast */
+    height: 100vh; 
+    overflow-y: auto; 
+    padding: 1rem; 
+    background-color: #cde0f3; 
   }
   .brd-head{
     text-align: center;

@@ -1,24 +1,24 @@
 import React, { useEffect, useState ,useContext} from "react";
-import { FaUserCircle } from "react-icons/fa"; // Admin icon from react-icons
+import { FaUserCircle } from "react-icons/fa"; 
 import { AdminContext } from "./AdminContext/Admincontext";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [adminLogin, setAdminLogin] = useState(false);
   const id = localStorage.getItem("id");
-
-  // Set adminLogin state based on the presence of id
+const navigate=useNavigate()
+  
   useEffect(() => {
     if (id) {
       setAdminLogin(true);
     }
   }, [id]);
 
-  // Function to handle admin logout
   const adminLogout = () => {
 
-    localStorage.removeItem("id"); // Clear admin ID from localStorage
-    setAdminLogin(false); // Update state
-    // Optionally redirect or notify the user
+    localStorage.removeItem("id"); 
+    setAdminLogin(false); 
+    navigate('/login')
   };
 const{toggled,setToggled,broken,setBroken}=useContext(AdminContext)
 
@@ -32,7 +32,6 @@ const{toggled,setToggled,broken,setBroken}=useContext(AdminContext)
           </button>
         )}
       </div>
-        {/* Admin Icon and Logout button */}
         {adminLogin && (
           <div className="d-flex align-items-center">
             <FaUserCircle size={30} color="white" className="me-3" />

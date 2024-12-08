@@ -3,7 +3,7 @@ import { userContext } from '../context/useContext';
 import { useNavigate } from 'react-router-dom';
 
 function Cart() {
-  const { cart, RemoveCart, updatequantity } = useContext(userContext);
+  const { cart=[], RemoveCart, updatequantity } = useContext(userContext);
 
   
   const totalAmount = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
@@ -11,7 +11,7 @@ const navigate=useNavigate()
   
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 mb-5">
       <div className="d-flex justify-content-center align-items-center mb-4">
         <h2 >Shopping Cart</h2>
         

@@ -24,12 +24,12 @@ const AdminLayout = () => {
         customBreakPoint="800px"
         onBreakPoint={setBroken}
         style={{
-          background: "linear-gradient(145deg, #e0f7fa, #b3e5fc)", // Light blue gradient background
-          color: "#0077b6", // Text color to contrast with background
-          boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)", // Subtle shadow for depth
+          background: "linear-gradient(145deg, #e0f7fa, #b3e5fc)", 
+          color: "#0077b6", 
+          boxShadow: "2px 0 5px rgba(0, 0, 0, 0.1)", 
         }}
       >
-        {/* Sidebar Header */}
+        
         <div
           style={{
             position: "relative",
@@ -66,7 +66,7 @@ const AdminLayout = () => {
           )}
         </div>
 
-        {/* Sidebar Menu */}
+        
         <Menu>
           <MenuItem component={<Link to="/admin" style={{color:"black",fontSize:"15px",fontWeight:"bold"}}/>} icon={<FaHome />}>Home</MenuItem>
 
@@ -83,7 +83,7 @@ const AdminLayout = () => {
         </Menu>
       </Sidebar>
 
-      {/* Main Content */}
+      
       <main style={{ width: "100%",overflow:"hidden" }}>
         <div style={{ width: "100%" }}>
           <Navbar />

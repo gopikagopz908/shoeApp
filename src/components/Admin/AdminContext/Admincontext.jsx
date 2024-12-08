@@ -3,7 +3,8 @@ import { createContext } from 'react'
 import axios from 'axios'
 import { log } from 'debug/src/browser'
 
-export const AdminContext=createContext()
+export const 
+AdminContext=createContext()
 function Admin({children}) {
 
     
@@ -44,9 +45,8 @@ function Admin({children}) {
     
     const handleBlock = (user) => {
         axios
-          .patch(`http://localhost:3000/users/${user.id}`, { isBlocked: !user.isBlocked }) // Update on the backend
+          .patch(`http://localhost:3000/users/${user.id}`, { isBlocked: !user.isBlocked }) 
           .then(() => {
-            // Update the local users state after a successful API response
             setUsers((prevUsers) =>
               prevUsers.map((u) =>
                 u.id === user.id ? { ...u, isBlocked: !user.isBlocked } : u
