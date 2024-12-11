@@ -5,7 +5,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
-  // Validation Schema
+  
   const validationSchema = Yup.object({
     title: Yup.string().required("Product title is required"),
     image: Yup.string().required("Image URL is required"),
@@ -41,19 +41,16 @@ const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
     stock: "",
   };
 
-  // Handle form submission and send data to backend using axios
   const handleSubmit = (values, { resetForm }) => {
-    // POST request to add a new product using axios
     axios
-      .post("http://localhost:3000/products", values) // Sending form values directly
+      .post("http://localhost:3000/products", values) 
       .then((response) => {
-        alert("product is added"); // Call onSubmit prop (you can use this for further actions)
-        resetForm(); // Reset the form fields
-        handleClose(); // Close the modal
+        alert("product is added"); 
+        resetForm(); 
+        handleClose(); 
       })
       .catch((error) => {
         console.error("Error adding product:", error);
-        // You can show an error message here if needed
       });
   };
 
@@ -149,7 +146,7 @@ const AddProductModal = ({ show, handleClose, onClose, onSubmit }) => {
                       Price
                     </label>
                     <Field
-                      type="text" // Change to text to avoid arrows
+                      type="text" 
                       id="price"
                       name="price"
                       className="form-control"

@@ -10,13 +10,15 @@ import Navbar from "./Adminnav";
 import { AdminContext } from "./AdminContext/Admincontext";
 
 const AdminLayout = () => {
+  
   const { toggled, setToggled, broken, setBroken } = useContext(AdminContext);
+ const strg= localStorage.getItem("adminId",)
 
-  // Handle Sidebar Toggle
+  
   const handleToggle = () => {
     setToggled(!toggled);
   };
-
+if(!strg) return<h1>no access</h1>
   return (
     <div style={{ display: "flex", height: "100%", minHeight: "400px" }}>
       <Sidebar

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FaEdit, FaTrashAlt } from "react-icons/fa"; // Icons for Edit and Delete
-import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap styles
+import { FaEdit, FaTrashAlt } from "react-icons/fa"; 
+import "bootstrap/dist/css/bootstrap.min.css"; 
 import Admin, { AdminContext } from "../Admin/AdminContext/Admincontext";
 import { useNavigate } from "react-router-dom";
 

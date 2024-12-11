@@ -10,12 +10,11 @@ function ViewOrders() {
 
   useEffect(() => {
     if (users?.length > 0) {
-      // Find the user with the matching ID
       const user = users.find((item) => String(item.id) === id);
       if (user) {
-        setUserOrders(user.order); // Assuming `order` is an array containing order details
+        setUserOrders(user.order); 
       } else {
-        setUserOrders(null); // User not found or no orders
+        setUserOrders(null); 
       }
     }
   }, [id, users]);

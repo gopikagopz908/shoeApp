@@ -17,6 +17,7 @@ const navigate=useNavigate()
   const adminLogout = () => {
 
     localStorage.removeItem("id"); 
+    localStorage.removeItem("adminId")
     setAdminLogin(false); 
     navigate('/login')
   };

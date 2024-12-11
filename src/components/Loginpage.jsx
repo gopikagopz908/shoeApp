@@ -33,14 +33,19 @@ const Loginform = () => {
   
   const handleSubmit = async (values) => {
   
-    const user = userdata.find((user) => user.email === values.email && user.password === values.password);
+    const user = userdata.find((user) => user.email === values.email && user.password === values.password );
+
   if(user.email==="admin@gmail.com"&&user.password==="888888"){
     localStorage.setItem('id', user.id);
+    localStorage.setItem("adminId",user.id)
     navigate("/admin")
     alert("admin logined")
     return
   }
-
+if(user.isBlocked===true){
+  alert(" blocked user")
+  return
+}
     if (user) {
       alert('Login Successful!');
       
